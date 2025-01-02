@@ -1,34 +1,41 @@
-
-print("*** HDFC BANK ***")
-Entercard=input("enter card number: ")
-Enterpin=input("enter pin:")
-if Entercard=="123456789" and Enterpin== "1122":
-    print("Hello John!")
-else:
-    print("Wrong card or pin")   
-    exit()     
-balance = 0
-i=1
-while i<=3:
-    print("1. Deposit")
-    print("2. Withdraw")
-    print("3. Exit")
-    i=i+1
-    choice= input("Enter your choice: ")
+print("***HDFC BANK***")
+balance=0
+while True:
+    print("1.Create Account")
+    print("2.Deposit")
+    print("3.Withdraw")
+    print("4.Exit")
+    choice=input("Enter your Choice: ")
     if choice=="1":
-        amount=int(input("Enter amount : "))
-        balance= balance+amount
-        print("Current Balance is ",amount)
+        details=[]
+        for i in range(1):
+            detail={}
+            Username=input("enter Name: ")
+            Accountno=input("Enter Accnumber:")
+            pin=input("Enter pin:")
+            InitialBal=input("Enter Bal:")
+            detail={"Username":Username,"Accountno":Accountno,"pin":pin,"InitialBal":InitialBal}
+            details.append(detail)
+        for i in details:
+             print(f'{i["Username"]}-{i["Accountno"]}-{i["pin"]}-{i["InitialBal"]}')    
+             print("Account is created")
+             
+
     elif choice=="2":
         amount=int(input("Enter Amount: "))
+        balance=balance+amount
+        print("Total Balance is:",balance)
+    elif choice=="3":
+        amount=int(input("Enter Amount: "))
         if balance<amount:
-            print("insufficient Balance")
+            print("Insufficient Balance")
         else:
             balance=balance-amount
-        print("current balance is:",balance)
-    elif choice=="3":
-        print("Transaction Completed")
+            print("Total Balance is: ",balance) 
+    elif choice=="4":
+        print("Transaction completed")
+        break
     else:
-        break      
-else: 
-    print("program is completed")
+        break
+else:
+    print("program is completed")               
