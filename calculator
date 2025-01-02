@@ -1,1 +1,26 @@
-
+print("*****Calculator*****")
+print("1.Addition")
+print("2.subtraction")
+print("3.multiplication")
+print("4.division")
+choice=input("Enter your choice: ")
+n1=int(input("Enter Number1: "))
+n2=int(input("Enter number2: "))
+def add(n1,n2):
+    return n1+n2
+def sub(n1,n2):
+    return n1-n2
+def mul(n1,n2):
+    return n1*n2
+def div(n1,n2):
+    return n1/n2
+if choice=="1":
+    print("The sum is:",add(n1,n2))
+elif choice=="2":
+    print("The subtraction is:",sub(n1,n2))
+elif choice=='3':
+    print("The multiplication is:",mul(n1,n2))
+elif choice=="4":
+    print("The division is:",div(n1,n2))
+else:
+    print("Wrong Choice")
